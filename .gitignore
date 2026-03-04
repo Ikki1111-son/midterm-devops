@@ -1,0 +1,17 @@
+# dependencies
+**/node_modules/
+
+# env / secrets
+**/.env
+**/.env.*
+
+# logs
+**/*.log
+**/logs/
+
+# uploads (generated files)
+app/public/uploads/
+
+# OS
+.DS_Store
+Thumbs.db
