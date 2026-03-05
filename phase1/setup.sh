@@ -1,11 +1,26 @@
 #!/bin/bash
 
-echo "Setting up project..."
+echo "Starting server setup..."
 
+echo "Updating system..."
+sudo apt update -y
+
+echo "Installing Node.js and npm..."
+sudo apt install -y nodejs npm
+
+echo "Checking Node version..."
+node -v
+npm -v
+
+echo "Moving to application folder..."
 cd ../app
 
-echo "Installing dependencies..."
+echo "Installing project dependencies..."
 npm install
 
-echo "Setup completed!"
-echo "Run the app with: npm start"
+echo "Creating required directories..."
+mkdir -p logs
+mkdir -p uploads
+
+echo "Setup completed successfully!"
+echo "Run the app using: npm start"
