@@ -24,7 +24,9 @@ jobs:
           cd app
           npm install
 
-      - name: Run build
+      - name: Check app start
         run: |
           cd app
-          npm start
+          node main.js &
+          sleep 5
+          pkill node
