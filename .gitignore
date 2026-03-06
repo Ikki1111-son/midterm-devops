@@ -4,12 +4,21 @@
 # env / secrets
 **/.env
 **/.env.*
+*.pem
+*.key
 
 # logs
 **/*.log
 **/logs/
 
-# uploads (generated files)
+# builds / test artifacts
+**/dist/
+**/build/
+**/coverage/
+
+# uploads / generated files (cover common cases)
+uploads/
+app/uploads/
 app/public/uploads/
 
 # OS

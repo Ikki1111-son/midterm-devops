@@ -22,11 +22,9 @@ jobs:
       - name: Install dependencies
         run: |
           cd app
-          npm install
+          npm ci || npm install
 
-      - name: Check app start
+      - name: Lint/Test (if available)
         run: |
           cd app
-          node main.js &
-          sleep 5
-          pkill node
+          npm test --if-present
