@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Management System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <header class="bg-white shadow-sm p-4 flex justify-between items-center px-10 border-b">
+        <div class="flex items-center gap-4">
+            <img src="upload.png" alt="Cloud Upload Logo" class="w-15 h-12 rounded-full border border-gray-200">
+            <h1 class="text-xl font-bold text-gray-800">File Upload</h1>
+        </div>
+        <div class="user-box">
+            <p class="font-bold text-sm" id="display-username">Loading...</p>
+            <a href="/logout" class="text-red-500 hover:underline text-xs uppercase font-semibold">Logout</a>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto mt-8 flex flex-col md:flex-row gap-6 p-4">
+
+        <section class="flex-1 bg-white p-6 rounded-lg shadow-sm border">
+            <div id="dropzone" class="dropzone">
+                <i class="fas fa-cloud-upload-alt text-4xl text-blue-500 mb-4"></i>
+                <p class="text-gray-600 font-medium">You can drag and drop files here to add them.</p>
+                <input type="file" id="fileInput" class="hidden" multiple accept="image/*">
+            </div>
+
+            <div class="mt-4 text-sm text-gray-500">
+                <span class="font-bold">Accepted file types:</span>
+                <p>Images (.jpg, .png, .gif, .webp)</p>
+            </div>
+
+            <div class="mt-6 flex gap-4">
+                <button onclick="saveChanges()" class="btn-save">Save changes</button>
+                <button onclick="location.reload()" class="btn-cancel">Cancel</button>
+            </div>
+
+            <div class="mt-10 border-2 border-gray-900 p-5 rounded-md min-h-[300px]">
+                <div class="flex justify-between mb-4 border-b-2 border-gray-100 pb-3 font-bold text-gray-700">
+                    <span>Uploaded files</span>
+                    <span>Time: DD/MM/YYYY</span>
+                </div>
+                <ul id="fileList" class="space-y-3">
+                    </ul>
+            </div>
+        </section>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+</html>
