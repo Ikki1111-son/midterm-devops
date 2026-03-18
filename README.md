@@ -27,13 +27,6 @@ Create `app/.env` from `app/.env.example`:
 - `PORT=3000`
 - `MONGO_URI=...`
 
-## Run Locally
-```bash
-cd app
-npm install
-npm start
-# open http://localhost:3000
-
 ## Automation Script
 The Ubuntu setup script is stored in `scripts/setup.sh`.
 
@@ -63,3 +56,11 @@ Screenshots and supporting evidence for each phase are stored under the `docs/` 
 - `docs/phase1/`
 - `docs/phase2/`
 - `docs/phase3/`
+
+## Run Locally
+```bash
+cd app
+npm install
+npm start
+# open http://localhost:3000
+
