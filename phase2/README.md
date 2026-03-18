@@ -155,9 +155,8 @@ phase2/
 ├── README.md
 ├── nginx/
 │   └── myapp.conf
-├── env/
-│   └── .env.example
-└── docs/
+└── env/
+    └── .env.example
 ```
 
 ## 15. Conclusion
