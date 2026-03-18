@@ -33,3 +33,33 @@ cd app
 npm install
 npm start
 # open http://localhost:3000
+
+## Automation Script
+The Ubuntu setup script is stored in `scripts/setup.sh`.
+
+Its responsibilities include:
+- updating package indexes
+- installing required OS packages
+- installing Node.js runtime
+- installing PM2
+- creating required runtime directories
+- installing application dependencies
+
+## Git Workflow
+This repository follows a feature-branch workflow:
+- all changes are developed in feature branches
+- changes are merged into `main` through pull requests
+- branch protection rules are enabled for `main`
+- pull request approvals and CI checks are required before merging
+
+## Deployment Notes
+- **Phase 2** deploys the application to an Ubuntu cloud server
+- the deployed application is exposed through a domain name with HTTPS
+- a reverse proxy is used to forward requests to the Node.js application
+- **Phase 3** containerizes the application using Docker and Docker Compose
+
+## Evidence
+Screenshots and supporting evidence for each phase are stored under the `docs/` directory:
+- `docs/phase1/`
+- `docs/phase2/`
+- `docs/phase3/`
