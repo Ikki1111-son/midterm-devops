@@ -157,6 +157,7 @@ phase2/
 │   └── myapp.conf
 └── env/
     └── .env.example
+```
 
 ## 15. Conclusion
 The application was successfully deployed on a cloud-based Ubuntu server using a traditional deployment approach. The system includes a fully functional backend, database integration, file upload capability, reverse proxy configuration, domain mapping, and HTTPS security.
