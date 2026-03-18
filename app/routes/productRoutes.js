@@ -5,22 +5,45 @@ const validators = require('../validators/productValidator');
 const { validationResult } = require('express-validator');
 const multer = require('multer');
 const path = require('path');
+const fs = require('fs');
 
-// multer storage config
+const uploadDir = path.join(__dirname, '..', 'public', 'uploads');
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir, { recursive: true });
+}
+
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, path.join(__dirname, '..', 'public', 'uploads'));
+    cb(null, uploadDir);
   },
   filename: function (req, file, cb) {
-    const safe = Date.now() + '-' + file.originalname.replace(/[^a-zA-Z0-9.\-_]/g, '_');
-    cb(null, safe);
+    const safeName =
+      Date.now() +
+      '-' +
+      file.originalname.replace(/[^a-zA-Z0-9.\-_]/g, '_');
+    cb(null, safeName);
   }
 });
-const upload = multer({ storage });
+
+const fileFilter = (req, file, cb) => {
+  if (file.mimetype && file.mimetype.startsWith('image/')) {
+    cb(null, true);
+  } else {
+    cb(new Error('Only image files are allowed'));
+  }
+};
+
+const upload = multer({
+  storage,
+  limits: { fileSize: 2 * 1024 * 1024 },
+  fileFilter
+});
 
 function handleValidation(req, res, next) {
   const errors = validationResult(req);
-  if (!errors.isEmpty()) return res.status(400).json({ errors: errors.array() });
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
   next();
 }
 
