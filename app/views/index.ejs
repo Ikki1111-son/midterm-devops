@@ -40,11 +40,13 @@
               <td><%= p.price %></td>
               <td><%= p.color %></td>
               <td><%= p.description || '' %></td>
-              <td class="d-flex gap-1 flex-wrap">
+              <td>
+              <div class="d-flex gap-2 flex-nowrap">
                 <button class="btn btn-sm btn-outline-primary btn-view">View</button>
                 <button class="btn btn-sm btn-outline-secondary btn-edit">Edit</button>
                 <button class="btn btn-sm btn-outline-danger btn-delete">Delete</button>
-              </td>
+              </div>
+            </td>
             </tr>
           <% }) %>
         </tbody>
