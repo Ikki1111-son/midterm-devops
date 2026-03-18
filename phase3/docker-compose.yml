@@ -1,0 +1,26 @@
+services:
+  web:
+    image: legiang2090/devops-midterm-web:latest
+    container_name: devops_web
+    restart: unless-stopped
+    env_file:
+      - .env
+    depends_on:
+      - mongodb
+    ports:
+      - "3000:3000"
+    volumes:
+      - uploads_data:/app/public/uploads
+
+  mongodb:
+    image: mongo:6.0
+    container_name: devops_mongodb
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_DATABASE: products_db
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
+  uploads_data:
