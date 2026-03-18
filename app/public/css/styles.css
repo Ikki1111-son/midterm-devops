@@ -1,7 +1,32 @@
-body { background: #f8f9fa; }
-.table { background: #fff; }
-.modal .form-label { font-weight: 600; }
+body {
+  background: #f8f9fa;
+}
 
-@media (min-width: 768px) {
-  .modal-dialog { max-width: 540px; }
+header h1 {
+  font-weight: 700;
+}
+
+.table {
+  background: #fff;
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+}
+
+.img-thumbnail {
+  border-radius: 10px;
+}
+
+.btn {
+  border-radius: 8px;
+}
+
+.modal .form-label {
+  font-weight: 600;
+}
+
+footer {
+  padding-bottom: 12px;
 }
