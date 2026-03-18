@@ -17,7 +17,7 @@
 **/build/
 **/coverage/
 
-# uploads / generated files (cover common cases)
+# uploads / generated files
 uploads/
 app/uploads/
 app/public/uploads/
