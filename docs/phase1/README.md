@@ -1,60 +1,47 @@
-\# Midterm DevOps Project
+# Phase 1
 
+## Objective
+Phase 1 focuses on repository organization, Git workflow, branch protection, automation setup, and CI preparation before deployment.
 
+## Completed Work
 
-\## Overview
+### 1. Repository Hygiene
+The repository was organized into clear top-level directories for application code, phase deliverables, scripts, and documentation. Supporting files such as `README.md` and `.gitignore` were also prepared.
 
-This repository contains a Node.js (Express) product CRUD application with a simple UI. The project is structured into phases (phase1/phase2/phase3) to demonstrate DevOps practices: repo hygiene, Git workflow, automation scripts, and CI.
+**Evidence**
+- `docs/phase1/evidence-repo-structure.png`
+- `docs/phase1/evidence-readme-1.png`
+- `docs/phase1/evidence-readme-2.png`
+- `docs/phase1/evidence-gitignore.png`
 
+### 2. Automation Script
+An Ubuntu setup script was created in `scripts/setup.sh` to prepare the runtime environment. The script updates package indexes, installs required packages, installs Node.js and PM2, creates required directories, and installs application dependencies.
 
+**Evidence**
+- `docs/phase1/evidence-setup-script.png`
 
-\## Architecture
+### 3. Git Workflow
+The team followed a feature-branch workflow. Changes were developed in feature branches and merged into `main` through pull requests.
 
-\- \*\*Web App\*\*: Node.js + Express (MVC-style structure)
+**Evidence**
+- `docs/phase1/evidence-branches.png`
+- `docs/phase1/evidence-pr-list.png`
+- `docs/phase1/evidence-pr-detail-phase1.png`
 
-\- \*\*Database\*\*: MongoDB (uses connection string from environment variables)
+### 4. Branch Protection
+Branch protection rules were enabled on `main` to require pull requests, approvals, and passing status checks before merging.
 
-\- \*\*Static/UI\*\*: Server-rendered pages + static assets under `app/public`
+**Evidence**
+- `docs/phase1/evidence-branch-protection.png`
 
-\- \*\*Uploads/Generated files\*\*: stored under common upload folders (see `.gitignore`)
+### 5. Commit History and CI
+The repository includes commit history and GitHub Actions workflow runs showing CI checks executed as part of the development workflow.
 
+**Evidence**
+- `docs/phase1/evidence-commits-1.png`
+- `docs/phase1/evidence-commits-2.png`
+- `docs/phase1/evidence-actions-1.png`
+- `docs/phase1/evidence-actions-2.png`
 
-
-\## Folder Structure
-
-\- `app/` - Application source code
-
-\- `phase1/` - Phase 1 notes
-
-\- `phase2/` - Phase 2 deliverables
-
-\- `phase3/` - Phase 3 deliverables
-
-\- `scripts/` - Automation scripts (Ubuntu setup)
-
-\- `docs/` - Screenshots/evidence required by the checklist
-
-
-
-\## Environment Variables
-
-Create `app/.env` from `app/.env.example`:
-
-\- `PORT=3000`
-
-\- `MONGO\_URI=...`
-
-
-
-\## Run Locally
-
-```bash
-
-cd app
-
-npm install
-
-npm start
-
-\# open http://localhost:3000
-CI trigger test
+## Result
+Phase 1 was completed with a clean repository structure, protected main branch, pull-request-based collaboration process, automation script for Ubuntu environment preparation, and CI workflow integration. These steps established the foundation for deployment work in the next phases.
