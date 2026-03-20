@@ -136,25 +136,7 @@ As a result:
 
 This behavior demonstrates an important operational improvement over a manual deployment process.
 
-## 15. Evidence
-All supporting screenshots and logs for this phase are stored in:
-
-`phase3/docs/`
-
-Evidence includes:
-- Docker version output
-- Docker Compose version output
-- Dockerfile screenshot
-- docker build output
-- docker push output
-- Docker Hub repository screenshot
-- docker compose up output
-- docker ps output
-- MongoDB container verification
-- persistence and restart tests
-- application running through HTTPS after containerization
-
-## 16. Repository Structure
+## 15. Repository Structure
 
 ```text
 phase3/
@@ -164,7 +146,7 @@ phase3/
 └── .env.example
 ```
 
-## 17. Conclusion
+## 16. Conclusion
 The application was successfully migrated from a traditional host-based deployment model to a fully containerized architecture using Docker and Docker Compose. Both the web application and the MongoDB database now run in isolated containers, while Nginx continues to provide reverse proxy and HTTPS support at the host level.
 
 This phase demonstrates improved portability, reproducibility, and maintainability compared with the Phase 2 deployment, and reflects a more modern DevOps-oriented deployment workflow.
